@@ -1,11 +1,13 @@
+# SING: Stability-Incorporated Neighborhood Graph
+
 We provide the basic functionality of SING.
 
-Usage:
+**Usage:**
 
 python main.py --filename --filetype --epsilon --density --drawEdges
 
 
-Parameters:
+**Parameters:**
 - filename: the input data, usually a list of 2D coordinates, sometimes with additional information per point e.g. radius
 - filetype: th etype of input data, which can be 'stipples', 'disks' or 'species'. Stipples files only contain 2D coordinates of each point, disks files contain points which a given radius, while species files are exmaples from [Ecormier-Nocca et al. 2019], of points with radius and certain other properties which are ignored for our use case
 - epsilon: (optional) the default value is 1.0
@@ -14,8 +16,6 @@ Parameters:
 
 
 The application plots the clustering using the given arguments, and the persistence diagram.
-
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 ## License
 
