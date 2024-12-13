@@ -57,17 +57,26 @@ def get_data_bounds( points):
     return min(all_x)-pointsize, max(all_x)+pointsize, min(all_y)-pointsize, max(all_y)+pointsize
 
 
-def drawPoints(plt, points, n_components, labels, size=0.7, ax=None):
+def drawPoints(plt, points, n_components, labels, size=0.7, ax=None, flip_y=False):
     color = cm.rainbow(np.linspace(0, 1, n_components))
     np.random.shuffle(color)
     x = [point[0] for point in points]
     y = [point[1] for point in points]
     color_labels = []
+
+    if flip_y:
+        max_y = max(y)
+        y = [max_y - yi for yi in y]
     
     for index, point in enumerate(points):
         if(n_components==1):
             index=0
         color_labels.append(color[(int)(labels[index])])
+
+    min_x, max_x, min_y, max_y = get_data_bounds(points)
+
+    if flip_y:
+        min_y, max_y = max_y, min_y
         
     plt.scatter(x, y, s=size, color=color_labels)
     
