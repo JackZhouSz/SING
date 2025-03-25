@@ -10,6 +10,12 @@ Diana Marin, Amal Dev Parakkat, Stefan Ohrhallinger, Michael Wimmer, Steve Oudot
 
 We introduce the Stability-Incorporated Neighborhood Graph (SING), a novel density-aware structure designed to capture the intrinsic geometric properties of a point set. We improve upon the spheres-of-influence graph by incorporating additional features to offer more flexibility and control in encoding proximity information and capturing local density variations. Through persistence analysis on our proximity graph, we propose a new clustering technique and explore additional variants incorporating extra features for the proximity criterion. Alongside the detailed analysis and comparison to evaluate its performance on various datasets, our experiments demonstrate that the proposed method can effectively <ins>extract meaningful clusters from diverse datasets with variations in density and correlation</ins>. Our application scenarios underscore the advantages of the proposed graph over classical neighborhood graphs, particularly in terms of parameter tuning.
 
+# Dependencies
+All the required libraries are provided in *requirements.txt*. You can install them by using:
+```python
+pip install -r requirements.txt
+```
+
 # Usage
 ```bash
 python main.py --filename --filetype --epsilon --density --drawEdges
@@ -29,7 +35,7 @@ The application plots the clustering using the given arguments, and the persiste
 We present some example outputs of our code. On the left, we showcase the SING graph and its connected components, each in a different color. On the right, the persistence diagram is plotted.
 - **Disks** - the input is defined as a collection of disks, each with a position and a radius value.
   ```bash
-  python main.py 
+  python main.py --
         --filename examples/disks/pattern_data.txt 
         --filetype disks 
         --drawEdges True 
