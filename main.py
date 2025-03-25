@@ -234,7 +234,7 @@ if __name__ == "__main__":
         points, distance_matrix, lower_tri = processBasicDiskFile(filename, epsilon, shouldDrawEdges = shouldDrawEdges)
 
     # plt.savefig(filename+str(epsilon)+"_basic.pdf",bbox_inches='tight', pad_inches=0)
-
+    
     diag = compute_persistence_diagram(distance_matrix)
 
     barcode = gudhi.plot_persistence_barcode(diag)

@@ -37,7 +37,8 @@ def drawCirclesPerClassNoSpecies(data, points, no_classes, class_per_point, ax, 
     color = cm.rainbow(np.linspace(0, 1, no_classes))
     
     for index, el in enumerate(data):
-        circle = plt.Circle((el[offset], el[offset + 1]), el[offset + 2], zorder=el[offset + 2], color=color[class_per_point[index]], fill=False, alpha = 0.5)
+
+        circle = plt.Circle((el[offset], el[offset + 1]), el[offset + 2], zorder=el[offset + 2], color=color[class_per_point[index]], fill=True, alpha = 0.5)
 
         ax.add_patch(circle)
 
